@@ -94,7 +94,7 @@ class Card extends Component {
         params: {
           event_label: IconConverter.toHex(event.id), 
         },
-        to: config.CONTRACT_ADDRESS,
+        to: window.CONTRACT_ADDRESS,
       })
     ).execute()
     const participantsArr = participants ? participants.split(',').splice(0, participants.split(',').length - 1) : []
@@ -108,7 +108,7 @@ class Card extends Component {
     // const { myAddress } = this.state
     // const txObj = sendTxBuild({
     //   from: 'hxebf3a409845cd09dcb5af31ed5be5e34e2af9433',
-    //   to: config.CONTRACT_ADDRESS,
+    //   to: window.CONTRACT_ADDRESS,
     //   methodName: 'add_event',
     //   params: {
     //     event_label: IconConverter.toHex(5), 
@@ -193,7 +193,7 @@ export default class App extends Component {
       const { myAddress } = this.state
       const txObj = sendTxBuild({
         from: myAddress,
-        to: config.CONTRACT_ADDRESS,
+        to: window.CONTRACT_ADDRESS,
         methodName: 'subscribe_event',
         params: {
           event_label: IconConverter.toHex(id), 
